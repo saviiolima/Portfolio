@@ -25,5 +25,6 @@ export const Img = styled.img`
   margin: 0 auto;
   &:hover {
     transform: scale(1.20);
+    transform: rotate(30deg);
   }
 `;

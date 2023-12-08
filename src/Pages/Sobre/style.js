@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  border-top: 0.9px solid #041c1c;
-  width: 100%;
-  min-height: calc(100vh - 185px);
-  color: #22463c;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: 0.9px solid #041c1c;
+  width: 100%;
+  min-height: calc(110vh - 175px);
+  color: #041c1c;
 `;
 
 export const DivTitulo = styled.div`
@@ -98,3 +98,23 @@ export const Img = styled.img`
     transform: scale(1.05);
   }
 `;
+
+export const DivSkills = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-around;
+height: 25vh;
+width: 50vw;
+`
+
+export const DivPar = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-around;
+`
+
+export const ImgSkills = styled.img`
+display: flex;
+align-items: center;
+justify-content: center;
+`

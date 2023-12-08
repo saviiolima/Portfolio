@@ -49,6 +49,9 @@ export const H2 = styled.h2`
 
 export const Img = styled.img`
   height: 430px;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const Linkedin = styled.img`
@@ -57,6 +60,10 @@ export const Linkedin = styled.img`
   font-family: "Roboto Mono", monospace;
   transition: 0.1s;
   width: 34px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const PdfSavio = styled.img`
@@ -65,6 +72,10 @@ export const PdfSavio = styled.img`
   font-family: "Roboto Mono", monospace;
   transition: 0.1s;
   width: 30px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const ALink = styled.a`
@@ -81,4 +92,8 @@ export const ALink = styled.a`
   border-radius: 10px;
   color: #041c1c;
   cursor: pointer;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;

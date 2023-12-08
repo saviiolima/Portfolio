@@ -10,9 +10,16 @@ import {
   H1,
   Figure,
   Img,
+  DivSkills,
+  ImgSkills,
 } from "./style";
 import Linked from "../../assets/linkedin.png";
 import Savio from "../../assets/perfilp.png";
+import Html from "../../assets/Html.png";
+import Css from "../../assets/Css.png";
+import JavaS from "../../assets/JavaScript.png";
+import React from "../../assets/React.png";
+import Styled from "../../assets/Styled.png";
 
 export default function Sobre() {
   return (
@@ -44,6 +51,16 @@ export default function Sobre() {
             <Img src={Savio} alt="Perfil" />
           </Figure>
         </Section>
+        <DivSkills>
+          {/*<DivPar>
+            <H1>Skills</H1>
+  </DivPar>*/}
+          <ImgSkills src={Html} alt="" />
+          <ImgSkills src={Css} alt="" />
+          <ImgSkills src={JavaS} alt="" />
+          <ImgSkills src={React} alt="" />
+          <ImgSkills src={Styled} alt="" />
+        </DivSkills>
       </Main>
     </>
   );
