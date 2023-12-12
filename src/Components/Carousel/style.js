@@ -13,6 +13,11 @@ export const Subtitle = styled.p`
   line-height: 1.5em;
   font-family: "Roboto Mono", monospace;
   color: #041c1c;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    font-size: 45px;
+  }
 `;
 
 export const Cards = styled.section`
@@ -23,6 +28,13 @@ export const Cards = styled.section`
   height: 350px;
   margin-right: 30px;
   border-radius: 8px;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
 `;
 
 export const Name = styled.p`
@@ -31,6 +43,11 @@ export const Name = styled.p`
   font-weight: 600;
   color: #e4ecec;
   font-family: "Roboto Mono", monospace;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    font-size: 20px;
+  }
 `;
 
 export const Image = styled.img`

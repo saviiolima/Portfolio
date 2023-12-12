@@ -9,16 +9,28 @@ export const HeaderContainer = styled.header`
   justify-content: space-around;
   height: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.25);
+  
+  @media screen and (max-width: 414px){
+    width: 100vw;
+  }
 `;
 
 export const Img = styled.img`
   width: 95px;
   height: 95px;
+
+  @media screen and (max-width: 414px) {
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 export const Nav = styled.nav`
   display: flex;
   gap: 85px;
+  @media screen and (max-width: 414px){
+    gap: 50px;
+  }
 `;
 
 export const LinkStyle = styled(Link)`

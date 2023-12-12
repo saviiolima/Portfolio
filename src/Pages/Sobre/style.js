@@ -8,6 +8,9 @@ export const Main = styled.main`
   width: 100%;
   min-height: calc(110vh - 175px);
   color: #041c1c;
+
+  @media screen and (max-width: 414px) {
+  }
 `;
 
 export const DivTitulo = styled.div`
@@ -15,11 +18,21 @@ export const DivTitulo = styled.div`
   height: 140px;
   width: 60%;
   align-items: center;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
+
 export const H1 = styled.h1`
-  font-family: "Roboto Mono", monospace;
   font-size: clamp(2rem, 3rem, 4rem);
   width: 250px;
+
+  @media screen and (max-width: 414px) {
+    font-size: 10vw;
+  }
 `;
 
 export const Section = styled.section`
@@ -34,6 +47,12 @@ export const Div = styled.div`
   height: 40vh;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+  }
 `;
 
 export const Paragraph = styled.p`
@@ -44,6 +63,14 @@ export const Paragraph = styled.p`
   line-height: 25px;
   width: 31vw;
   height: 100vh;
+
+  @media screen and (max-width: 414px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    line-height: 20px;
+  }
 `;
 
 export const DivSecond = styled.div`
@@ -69,6 +96,13 @@ export const Alink = styled.a`
   &:hover {
     transform: scale(1.05);
   }
+  @media screen and (max-width: 414px) {
+    display: flex;
+    font-size: 1.1rem;
+    align-items: center;
+    width: 35vw;
+    height: 5vh;
+  }
 `;
 
 export const LinkImg = styled.img`
@@ -76,6 +110,10 @@ export const LinkImg = styled.img`
   font-family: "Roboto Mono", monospace;
   //transition: 1s;
   width: 2vw;
+
+  @media screen and (max-width: 414px) {
+    width: 25px;
+  }
 `;
 
 export const Figure = styled.figure`
@@ -97,24 +135,35 @@ export const Img = styled.img`
   &:hover {
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: 414px) {
+    display: none;
+  }
 `;
 
 export const DivSkills = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-around;
-height: 25vh;
-width: 50vw;
-`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 25vh;
+  width: 50vw;
+`;
 
 export const DivPar = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-around;
-`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
 
 export const ImgSkills = styled.img`
-display: flex;
-align-items: center;
-justify-content: center;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    transform: scale(1.3);
+  }
+  
+  @media screen and (max-width: 414px) {
+    max-height: 7vh;
+}
+`;
