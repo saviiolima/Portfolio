@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
   :root {
     --bg-main: #0B0F17;
-    --bg-card: rgba(22, 31, 46, 0.7);
+    --bg-card: rgba(22, 31, 46, 0.75);
     --border-card: rgba(255, 255, 255, 0.08);
     --primary: #38bdf8;
     --primary-glow: rgba(56, 189, 248, 0.2);
@@ -20,7 +20,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: radial-gradient(circle at 15% 15%, #131c2e 0%, #0b0f17 50%, #070a10 100%);
+    background: radial-gradient(circle at 15% 15%, #131c2e 0%, #0b0f17 50%, #070a10 100%) !important;
+    background-color: #0b0f17 !important;
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
@@ -37,7 +38,6 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  /* Scrollbar moderna */
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -52,3 +52,5 @@ export const GlobalStyle = createGlobalStyle`
     background: #334155;
   }
 `;
+
+export default GlobalStyle;
