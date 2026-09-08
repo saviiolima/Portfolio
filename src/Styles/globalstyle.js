@@ -5,23 +5,24 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   :root {
-    --bg-main: #0B0F17;
-    --bg-card: rgba(22, 31, 46, 0.75);
+    --bg-main: #06090c;
+    --bg-card: rgba(13, 20, 24, 0.75);
     --border-card: rgba(255, 255, 255, 0.08);
-    --primary: #38bdf8;
-    --primary-glow: rgba(56, 189, 248, 0.2);
-    --accent: #818cf8;
-    --text-main: #f1f5f9;
+    --primary: #10b981;
+    --primary-light: #34d399;
+    --primary-glow: rgba(16, 185, 129, 0.22);
+    --accent: #06b6d4;
+    --text-main: #f8fafc;
     --text-muted: #94a3b8;
   }
 
   body {
-    background: radial-gradient(circle at 15% 15%, #131c2e 0%, #0b0f17 50%, #070a10 100%) !important;
-    background-color: #0b0f17 !important;
+    background: radial-gradient(circle at 15% 15%, #0f1c1a 0%, #06090c 50%, #040608 100%) !important;
+    background-color: var(--bg-main) !important;
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
@@ -39,17 +40,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background: #0b0f17;
+    background: #06090c;
   }
   ::-webkit-scrollbar-thumb {
     background: #1e293b;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #334155;
+    background: #10b981;
   }
 `;
 

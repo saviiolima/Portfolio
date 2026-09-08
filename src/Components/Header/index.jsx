@@ -1,11 +1,9 @@
 import * as S from "./style";
-import logo from "../../assets/logo.png";
 
 export default function Header() {
   return (
     <S.HeaderContainer>
       <S.LogoLink to="/">
-        <img src={logo} alt="Logo" />
         <span>SL</span>.dev
       </S.LogoLink>
       <S.Nav>

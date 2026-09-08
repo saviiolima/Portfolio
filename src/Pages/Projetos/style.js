@@ -13,9 +13,9 @@ export const HeaderSection = styled.div`
   .tag {
     display: inline-block;
     padding: 6px 14px;
-    background: rgba(56, 189, 248, 0.1);
-    color: var(--primary);
-    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--primary-light);
+    border: 1px solid rgba(16, 185, 129, 0.25);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -51,7 +51,7 @@ export const FilterBar = styled.div`
 export const FilterButton = styled.button`
   background: ${(props) =>
     props.$active ? "var(--primary)" : "rgba(255, 255, 255, 0.04)"};
-  color: ${(props) => (props.$active ? "#0b0f17" : "var(--text-muted)")};
+  color: ${(props) => (props.$active ? "#06090c" : "var(--text-muted)")};
   font-weight: ${(props) => (props.$active ? "700" : "500")};
   border: 1px solid
     ${(props) => (props.$active ? "var(--primary)" : "var(--border-card)")};
@@ -61,8 +61,8 @@ export const FilterButton = styled.button`
   transition: all 0.25s ease;
 
   &:hover {
-    color: ${(props) => (props.$active ? "#0b0f17" : "var(--text-main)")};
-    border-color: rgba(56, 189, 248, 0.5);
+    color: ${(props) => (props.$active ? "#06090c" : "var(--text-main)")};
+    border-color: rgba(16, 185, 129, 0.5);
     transform: translateY(-1px);
   }
 `;
@@ -99,17 +99,17 @@ export const ProjectCard = styled.div`
     height: 3px;
     background: ${(props) =>
       props.$featured
-        ? "linear-gradient(90deg, #38bdf8, #818cf8)"
+        ? "linear-gradient(90deg, var(--primary), var(--accent))"
         : "transparent"};
     opacity: 0.8;
   }
 
   &:hover {
     transform: translateY(-5px);
-    border-color: rgba(56, 189, 248, 0.3);
+    border-color: rgba(16, 185, 129, 0.35);
     box-shadow:
-      0 15px 35px rgba(0, 0, 0, 0.4),
-      0 0 25px rgba(56, 189, 248, 0.1);
+      0 15px 35px rgba(0, 0, 0, 0.5),
+      0 0 25px rgba(16, 185, 129, 0.1);
   }
 `;
 
@@ -128,7 +128,7 @@ export const CardHeader = styled.div`
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.8px;
-    color: var(--primary);
+    color: var(--primary-light);
   }
 
   .privacy-badge {
@@ -198,13 +198,13 @@ export const CardActions = styled.div`
   }
 
   .primary-action {
-    background: rgba(56, 189, 248, 0.12);
-    color: var(--primary);
-    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--primary-light);
+    border: 1px solid rgba(16, 185, 129, 0.25);
 
     &:hover {
       background: var(--primary);
-      color: #0b0f17;
+      color: #06090c;
     }
   }
 
@@ -222,23 +222,22 @@ export const CardActions = styled.div`
   .detail-action {
     width: 100%;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
     &:hover {
-      background: rgba(56, 189, 248, 0.15);
-      border-color: rgba(56, 189, 248, 0.4);
-      color: var(--primary);
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.4);
+      color: var(--primary-light);
     }
   }
 `;
 
-/* Modal de Case Study */
 export const ModalOverlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
   z-index: 200;
   display: flex;
@@ -248,8 +247,8 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #090f14;
+  border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 20px;
   max-width: 620px;
   width: 100%;
@@ -307,8 +306,8 @@ export const ModalContent = styled.div`
   }
 
   h4 {
-    font-size: 0.98rem;
-    color: var(--primary);
+    font-size: 0.95rem;
+    color: var(--primary-light);
     text-transform: uppercase;
     letter-spacing: 0.6px;
     margin-bottom: 12px;
