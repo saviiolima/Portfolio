@@ -1,14 +1,32 @@
 export const projectsData = [
   {
+    id: "dash-financeiro",
+    title: "Dashboard Financeiro - Aplicação Segura",
+    category: "Aplicações & Portais",
+    description:
+      "Plataforma experimental de controle financeiro integrada ao Google Sheets com 4 camadas essenciais de blindagem de segurança e IA.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Google Apps Script"],
+    featured: true,
+    isPrivate: false,
+    liveDemo: "https://github.com/saviiolima/dash_financeiro",
+    github: "https://github.com/saviiolima/dash_financeiro",
+    highlights: [
+      "Autenticação interna por Token Secreto (APP_SECRET_TOKEN) interceptando GET/POST no Apps Script",
+      "Isolamento completo da chave do Gemini no backend, ocultando credenciais do frontend",
+      "Sanitização avançada contra injeção de fórmulas (CSV/Formula Injection) no Google Sheets",
+      "Isolamento e limpeza seletiva de dados locais sem perda de configurações do usuário",
+    ],
+  },
+  {
     id: "plat-estudos",
     title: "Plataforma de Estudos & Gestão Acadêmica",
     category: "Aplicações & Portais",
     description:
       "Sistema web avançado para organização de rotinas de estudo, cronogramas, mapas curriculares e parser de dados assistido.",
     tags: ["React", "Vite", "Supabase", "SCSS", "Vitest"],
-    featured: true,
+    featured: false,
     isPrivate: false,
-    liveDemo: "https://platestudos.vercel.app/",
+    liveDemo: "https://github.com/saviiolima/plat_estudos",
     github: "https://github.com/saviiolima/plat_estudos",
     highlights: [
       "Autenticação e rotas protegidas integradas com Supabase",
