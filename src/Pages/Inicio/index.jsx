@@ -1,11 +1,104 @@
+import { useState, useEffect } from "react";
 import * as S from "./style";
 import { FaLinkedin, FaGithub, FaTerminal } from "react-icons/fa";
 
+const CODE_LINES = [
+  { text: "class DeveloperProfile:", type: "keyword" },
+  { text: '  name = "Sávio Lima"', type: "statement" },
+  {
+    text: '  domains = ["Software Engineering", "Data Analysis"]',
+    type: "statement",
+  },
+  { text: "  stack = [", type: "statement" },
+  { text: '    "React / Next.js",', type: "item" },
+  { text: '    "TypeScript / Node",', type: "item" },
+  { text: '    "Python / pandas",', type: "item" },
+  { text: '    "Supabase / RBAC"', type: "item" },
+  { text: "  ]", type: "statement" },
+  { text: "", type: "empty" },
+  { text: "  def mission(self):", type: "func" },
+  {
+    text: '    return "Transforming complex data into robust products"',
+    type: "return",
+  },
+];
+
 export default function Inicio() {
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  useEffect(() => {
+    let timer;
+
+    if (visibleCount < CODE_LINES.length) {
+      // Tempo entre cada linha descendo em cascata
+      timer = setTimeout(() => {
+        setVisibleCount((prev) => prev + 1);
+      }, 180);
+    } else {
+      // Pausa com todas as linhas visíveis antes de reiniciar o ciclo
+      timer = setTimeout(() => {
+        setVisibleCount(0);
+      }, 4200);
+    }
+
+    return () => clearTimeout(timer);
+  }, [visibleCount]);
+
+  const renderFormattedLine = (line) => {
+    if (!line.text) return "\u00A0";
+
+    if (line.type === "keyword") {
+      return (
+        <>
+          <span className="keyword">class</span>{" "}
+          <span className="class-name">DeveloperProfile</span>:
+        </>
+      );
+    }
+    if (line.type === "func") {
+      return (
+        <>
+          {"  "}
+          <span className="keyword">def</span>{" "}
+          <span className="func">mission</span>(self):
+        </>
+      );
+    }
+    if (line.type === "return") {
+      return (
+        <>
+          {"    "}
+          <span className="keyword">return</span>{" "}
+          <span className="string">
+            {'"Transforming complex data into robust products"'}
+          </span>
+        </>
+      );
+    }
+    if (line.type === "item") {
+      return (
+        <>
+          {"    "}
+          <span className="string">{line.text.trim()}</span>
+        </>
+      );
+    }
+
+    const parts = line.text.split(/(".*?")/g);
+    return parts.map((part, i) =>
+      part.startsWith('"') ? (
+        <span key={i} className="string">
+          {part}
+        </span>
+      ) : (
+        <span key={i}>{part}</span>
+      ),
+    );
+  };
+
   return (
     <S.HeroContainer>
       <S.InfoBox>
-        <div className="badge">Software Development</div>
         <h1>
           Olá, sou <span>Sávio Lima</span>
         </h1>
@@ -44,34 +137,15 @@ export default function Inicio() {
             <FaTerminal size={12} /> savio_core.py
           </div>
         </div>
+
         <pre className="terminal-body">
           <code>
-            <span className="keyword">class</span>{" "}
-            <span className="class-name">DeveloperProfile</span>:{"\n"}
-            {"  "}name = <span className="string">"Sávio Lima"</span>
-            {"\n"}
-            {"  "}domains = [
-            <span className="string">"Software Engineering"</span>,{" "}
-            <span className="string">"Data Analysis"</span>]{"\n"}
-            {"  "}stack = [{"\n"}
-            {"    "}
-            <span className="string">"React / Next.js"</span>,{"\n"}
-            {"    "}
-            <span className="string">"TypeScript / Node"</span>,{"\n"}
-            {"    "}
-            <span className="string">"Python / pandas"</span>,{"\n"}
-            {"    "}
-            <span className="string">"Supabase / RBAC"</span>
-            {"\n"}
-            {"  "}]{"\n\n"}
-            {"  "}
-            <span className="keyword">def</span>{" "}
-            <span className="func">mission</span>(self):{"\n"}
-            {"    "}
-            <span className="keyword">return</span>{" "}
-            <span className="string">
-              "Transforming complex data into robust products"
-            </span>
+            {CODE_LINES.slice(0, visibleCount).map((line, idx) => (
+              <div key={idx} className="code-line">
+                {renderFormattedLine(line)}
+              </div>
+            ))}
+            <span className="terminal-cursor">█</span>
           </code>
         </pre>
       </S.TerminalWindow>

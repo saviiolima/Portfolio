@@ -7,15 +7,15 @@ export const Container = styled.main`
 
 export const HeaderSection = styled.div`
   text-align: center;
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto 50px auto;
 
   .tag {
     display: inline-block;
     padding: 6px 14px;
-    background: rgba(56, 189, 248, 0.1);
-    color: var(--primary);
-    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--primary-light);
+    border: 1px solid rgba(16, 185, 129, 0.25);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -23,146 +23,94 @@ export const HeaderSection = styled.div`
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 800;
     letter-spacing: -0.5px;
+    margin-bottom: 12px;
 
     @media (max-width: 600px) {
-      font-size: 2rem;
+      font-size: 2.1rem;
     }
+  }
+
+  p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 `;
 
 export const ContentGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-
-  @media (max-width: 960px) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
 `;
 
-export const BioCard = styled.div`
+export const Card = styled.div`
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: 16px;
-  padding: 36px;
+  border-radius: 18px;
+  padding: 32px;
   backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
 
-  h2 {
-    font-size: 1.6rem;
-    margin-bottom: 18px;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(16, 185, 129, 0.12);
+    color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
     color: var(--text-main);
   }
 
   p {
     color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 16px;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 `;
 
-export const Highlights = styled.div`
-  margin-top: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+export const BenchmarkSection = styled.section`
+  margin-top: 60px;
+  text-align: center;
 
-  .item {
+  .section-title {
     display: flex;
     align-items: center;
-    gap: 16px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 14px 18px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    justify-content: center;
+    gap: 10px;
+    color: var(--primary-light);
+    margin-bottom: 10px;
 
-    .icon {
-      font-size: 1.4rem;
-      color: var(--primary);
-      flex-shrink: 0;
-    }
-
-    h4 {
-      font-size: 0.98rem;
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 2px;
-    }
-
-    span {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+      letter-spacing: -0.5px;
     }
   }
-`;
 
-export const SkillsCard = styled.div`
-  background: var(--bg-card);
-  border: 1px solid var(--border-card);
-  border-radius: 16px;
-  padding: 36px;
-  backdrop-filter: blur(14px);
-
-  h2 {
-    font-size: 1.6rem;
-    margin-bottom: 8px;
-    color: var(--text-main);
-  }
-
-  .subtitle {
+  .section-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 24px;
-  }
-`;
-
-export const CategoryGroup = styled.div`
-  margin-bottom: 22px;
-
-  h3 {
-    font-size: 0.92rem;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--primary);
-    margin-bottom: 12px;
-    font-weight: 700;
-  }
-`;
-
-export const SkillGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-export const SkillBadge = styled.div`
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: #e2e8f0;
-  transition: all 0.25s ease;
-
-  .skill-icon {
-    font-size: 1.15rem;
-    transition: color 0.25s ease;
-  }
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: ${(props) => props.$hoverColor || "var(--primary)"};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
-    .skill-icon {
-      color: ${(props) => props.$hoverColor || "var(--primary)"};
-    }
+    margin-bottom: 30px;
   }
 `;

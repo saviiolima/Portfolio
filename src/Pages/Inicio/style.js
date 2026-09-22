@@ -1,4 +1,20 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+`;
+
+const lineFadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const HeroContainer = styled.main`
   min-height: calc(100vh - 150px);
@@ -19,18 +35,6 @@ export const HeroContainer = styled.main`
 export const InfoBox = styled.div`
   max-width: 580px;
 
-  .badge {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--primary-light);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
   h1 {
     font-size: 3.2rem;
     font-weight: 800;
@@ -40,6 +44,7 @@ export const InfoBox = styled.div`
 
     span {
       background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -117,6 +122,7 @@ export const SecondaryBtn = styled.a`
 export const TerminalWindow = styled.div`
   width: 100%;
   max-width: 490px;
+  min-height: 380px;
   background: rgba(10, 16, 20, 0.88);
   border: 1px solid rgba(16, 185, 129, 0.2);
   border-radius: 14px;
@@ -126,6 +132,8 @@ export const TerminalWindow = styled.div`
   overflow: hidden;
   backdrop-filter: blur(16px);
   text-align: left;
+  display: flex;
+  flex-direction: column;
 
   .terminal-header {
     background: rgba(255, 255, 255, 0.03);
@@ -157,12 +165,12 @@ export const TerminalWindow = styled.div`
     }
 
     .title {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
       display: flex;
       align-items: center;
       gap: 6px;
-      font-family: monospace;
+      font-family: "Fira Code", "JetBrains Mono", Consolas, monospace;
     }
   }
 
@@ -172,6 +180,12 @@ export const TerminalWindow = styled.div`
     font-size: 0.88rem;
     line-height: 1.65;
     color: #e2e8f0;
+    flex-grow: 1;
+
+    .code-line {
+      animation: ${lineFadeIn} 0.18s ease-out forwards;
+      white-space: pre-wrap;
+    }
 
     .keyword {
       color: #34d399;
@@ -186,6 +200,14 @@ export const TerminalWindow = styled.div`
     }
     .func {
       color: #38bdf8;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-left: 2px;
+      animation: ${blink} 0.8s infinite;
     }
   }
 `;
