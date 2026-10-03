@@ -124,6 +124,7 @@ export const projectsData = [
     tags: ["React", "Styled-Components", "Responsividade"],
     featured: false,
     isPrivate: false,
+    badge: "Projeto em parceria",
     highlights: [
       "Layout otimizado para conversão mobile e desktop",
       "Componentilização limpa e estilização modular com Styled-Components",
