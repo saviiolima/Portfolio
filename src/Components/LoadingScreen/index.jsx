@@ -22,19 +22,19 @@ export default function LoadingScreen({ onFinish = () => {} }) {
           clearInterval(progressInterval);
           return 100;
         }
-        return prev + 2;
+        return prev + 5;
       });
-    }, 90);
+    }, 60);
 
     // Alterna os logs na tela
     const logInterval = setInterval(() => {
       setLogIndex((prev) => (prev < BOOT_LOGS.length - 1 ? prev + 1 : prev));
-    }, 900);
+    }, 250);
 
-    // Finaliza aos 5 segundos exatos
+    // Finaliza após ~1,3s
     const finishTimeout = setTimeout(() => {
       onFinish();
-    }, 5000);
+    }, 1300);
 
     return () => {
       clearInterval(progressInterval);
