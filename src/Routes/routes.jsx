@@ -9,11 +9,37 @@ const Inicio = lazy(() => import("../Pages/Inicio"));
 const Sobre = lazy(() => import("../Pages/Sobre"));
 const Projetos = lazy(() => import("../Pages/Projetos"));
 
+const BOOT_KEY = "boot-seen";
+
+// A tela de boot aparece só na primeira visita da sessão
+const hasSeenBoot = () => {
+  try {
+    return sessionStorage.getItem(BOOT_KEY) === "1";
+  } catch {
+    return false;
+  }
+};
+
+const markBootSeen = () => {
+  try {
+    sessionStorage.setItem(BOOT_KEY, "1");
+  } catch {
+    // armazenamento indisponível: apenas mostra o boot de novo na próxima visita
+  }
+};
+
 export default function Rotas() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => !hasSeenBoot());
 
   if (isLoading) {
-    return <LoadingScreen onFinish={() => setIsLoading(false)} />;
+    return (
+      <LoadingScreen
+        onFinish={() => {
+          markBootSeen();
+          setIsLoading(false);
+        }}
+      />
+    );
   }
 
   return (
