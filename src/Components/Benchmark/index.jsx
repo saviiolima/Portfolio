@@ -38,6 +38,27 @@ const SKILLS_DATA = [
     minPos: 20,
     maxPos: 55,
   },
+  {
+    name: "Next.js / Server Actions",
+    baseRatio: "36.5x",
+    baseCost: "$0.0028",
+    minPos: 40,
+    maxPos: 72,
+  },
+  {
+    name: "Supabase / Auth & RLS",
+    baseRatio: "71.3x",
+    baseCost: "$0.0022",
+    minPos: 50,
+    maxPos: 85,
+  },
+  {
+    name: "HTML & CSS (Tailwind / SCSS)",
+    baseRatio: "58.9x",
+    baseCost: "$0.0015",
+    minPos: 60,
+    maxPos: 90,
+  },
 ];
 
 export default function SkillsBenchmark() {

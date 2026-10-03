@@ -110,7 +110,7 @@ export default function Inicio() {
         </h2>
         <S.Actions>
           <S.PrimaryBtn
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/saviiolima"
             target="_blank"
             rel="noopener noreferrer"
           >
