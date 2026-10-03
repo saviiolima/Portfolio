@@ -84,22 +84,26 @@ export default function Projetos() {
                   </button>
                 ) : (
                   <>
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="primary-action"
-                    >
-                      <FaExternalLinkAlt size={12} /> Acessar
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="secondary-action"
-                    >
-                      <FaGithub size={14} /> Código
-                    </a>
+                    {project.liveDemo && (
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="primary-action"
+                      >
+                        <FaExternalLinkAlt size={12} /> Acessar
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="secondary-action"
+                      >
+                        <FaGithub size={14} /> Código
+                      </a>
+                    )}
                   </>
                 )}
               </S.CardActions>

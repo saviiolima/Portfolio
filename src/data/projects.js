@@ -8,7 +8,6 @@ export const projectsData = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Google Apps Script"],
     featured: true,
     isPrivate: false,
-    liveDemo: "https://github.com/saviiolima/dash_financeiro",
     github: "https://github.com/saviiolima/dash_financeiro",
     highlights: [
       "Autenticação interna por Token Secreto (APP_SECRET_TOKEN) interceptando GET/POST no Apps Script",
@@ -26,7 +25,6 @@ export const projectsData = [
     tags: ["React", "Vite", "Supabase", "SCSS", "Vitest"],
     featured: false,
     isPrivate: false,
-    liveDemo: "https://github.com/saviiolima/plat_estudos",
     github: "https://github.com/saviiolima/plat_estudos",
     highlights: [
       "Autenticação e rotas protegidas integradas com Supabase",
@@ -124,8 +122,6 @@ export const projectsData = [
     tags: ["React", "Styled-Components", "Responsividade"],
     featured: false,
     isPrivate: false,
-    liveDemo: "https://github.com/saviiolima/Portfolio",
-    github: "https://github.com/saviiolima/Portfolio",
     highlights: [
       "Layout otimizado para conversão mobile e desktop",
       "Componentilização limpa e estilização modular com Styled-Components",
@@ -140,8 +136,6 @@ export const projectsData = [
     tags: ["React", "CSS Modules", "UI Design"],
     featured: false,
     isPrivate: false,
-    liveDemo: "https://github.com/saviiolima/Portfolio",
-    github: "https://github.com/saviiolima/Portfolio",
     highlights: [
       "Recriação fiel de componentes de carrossel e cards de destaque",
       "Foco em micro-interações e experiência de navegação imersiva",
