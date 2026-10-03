@@ -136,6 +136,7 @@ export const projectsData = [
     tags: ["React", "CSS Modules", "UI Design"],
     featured: false,
     isPrivate: false,
+    github: "https://github.com/saviiolima/Disney",
     highlights: [
       "Recriação fiel de componentes de carrossel e cards de destaque",
       "Foco em micro-interações e experiência de navegação imersiva",
