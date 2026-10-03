@@ -154,7 +154,7 @@ export const CardHeader = styled.div`
 
 export const Description = styled.p`
   color: var(--text-muted);
-  font-size: 0.93rem;
+  font-size: 0.98rem;
   line-height: 1.6;
   margin-bottom: 22px;
   flex-grow: 1;

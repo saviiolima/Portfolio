@@ -83,7 +83,7 @@ export const Card = styled.div`
 
   p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
   }
 `;

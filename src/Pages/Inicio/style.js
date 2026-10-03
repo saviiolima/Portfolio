@@ -20,9 +20,11 @@ export const HeroContainer = styled.main`
   min-height: calc(100vh - 150px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 40px 8%;
-  gap: 50px;
+  gap: 80px;
 
   @media (max-width: 960px) {
     flex-direction: column;
