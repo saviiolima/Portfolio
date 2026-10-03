@@ -1,6 +1,12 @@
 import * as S from "./style";
 import SkillsBenchmark from "../../Components/Benchmark/index.jsx";
-import { FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaBriefcase,
+  FaCode,
+  FaDatabase,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 export default function Sobre() {
   return (
@@ -37,6 +43,30 @@ export default function Sobre() {
             Graduação em Ciências Biológicas, formação em Análise e
             Desenvolvimento de Sistemas (ADS) pela UnP, e estudos contínuos em
             Gestão Pública e engenharia de software.
+          </p>
+        </S.Card>
+
+        <S.Card>
+          <div className="card-icon">
+            <FaDatabase size={20} />
+          </div>
+          <h3>Do dado ao produto</h3>
+          <p>
+            Transformo planilhas e bases dispersas em sistemas utilizáveis:
+            importação em lote, relatórios consolidados e dashboards que apoiam
+            decisões pedagógicas e de gestão.
+          </p>
+        </S.Card>
+
+        <S.Card>
+          <div className="card-icon">
+            <FaShieldAlt size={20} />
+          </div>
+          <h3>Segurança e dados sensíveis</h3>
+          <p>
+            Trabalho com dados educacionais protegidos, aplicando controle de
+            acesso por perfil (RBAC), políticas em nível de linha com Supabase e
+            cuidados com LGPD, tokens e sanitização de entradas.
           </p>
         </S.Card>
       </S.ContentGrid>
