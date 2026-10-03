@@ -124,7 +124,8 @@ export default function Projetos() {
               <FaTimes size={14} />
             </button>
             <div className="modal-badge">
-              <FaLock size={10} /> Aplicação em Uso Institucional
+              <FaLock size={10} />{" "}
+              {activeModalProject.modalBadge || "Aplicação em Uso Institucional"}
             </div>
             <h2>{activeModalProject.title}</h2>
             <p>{activeModalProject.description}</p>

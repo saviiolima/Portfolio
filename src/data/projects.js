@@ -7,8 +7,9 @@ export const projectsData = [
       "Plataforma experimental de controle financeiro integrada ao Google Sheets com 4 camadas essenciais de blindagem de segurança e IA.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Vite", "Google Apps Script"],
     featured: true,
-    isPrivate: false,
-    github: "https://github.com/saviiolima/dash_financeiro",
+    isPrivate: true,
+    privacyNote: "Repositório Privado",
+    modalBadge: "Código-fonte Privado",
     highlights: [
       "Autenticação interna por Token Secreto (APP_SECRET_TOKEN) interceptando GET/POST no Apps Script",
       "Isolamento completo da chave do Gemini no backend, ocultando credenciais do frontend",
@@ -24,8 +25,9 @@ export const projectsData = [
       "Sistema web avançado para organização de rotinas de estudo, cronogramas, mapas curriculares e parser de dados assistido.",
     tags: ["React", "Vite", "Supabase", "SCSS", "Vitest"],
     featured: false,
-    isPrivate: false,
-    github: "https://github.com/saviiolima/plat_estudos",
+    isPrivate: true,
+    privacyNote: "Repositório Privado",
+    modalBadge: "Código-fonte Privado",
     highlights: [
       "Autenticação e rotas protegidas integradas com Supabase",
       "Gerenciamento avançado de estado com Context API (AppContext & AuthContext)",
