@@ -250,8 +250,10 @@ export const ModalContent = styled.div`
   background: #090f14;
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 20px;
-  max-width: 620px;
+  max-width: ${(props) => (props.$wide ? "820px" : "620px")};
   width: 100%;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
   padding: 32px;
   position: relative;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
@@ -335,5 +337,39 @@ export const ModalContent = styled.div`
         font-weight: bold;
       }
     }
+  }
+`;
+
+export const Gallery = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+
+  figure {
+    margin: 0;
+
+    &.wide {
+      grid-column: 1 / -1;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  figcaption {
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
   }
 `;

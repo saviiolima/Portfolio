@@ -1,3 +1,9 @@
+import painelDesktop from "../assets/evolutiva/painel-desktop.webp";
+import turmaDesktop from "../assets/evolutiva/turma-desktop.webp";
+import apresentacaoDesktop from "../assets/evolutiva/apresentacao-desktop.webp";
+import painelMobile from "../assets/evolutiva/painel-mobile.webp";
+import turmaMobile from "../assets/evolutiva/turma-mobile.webp";
+
 export const projectsData = [
   {
     id: "dash-financeiro",
@@ -51,6 +57,37 @@ export const projectsData = [
     featured: true,
     isPrivate: true,
     privacyNote: "Sistema Interno / LGPD",
+    screenshots: [
+      {
+        src: painelDesktop,
+        alt: "Painel da rede com indicadores de cobertura, atenção pedagógica e evolução por bimestre",
+        caption:
+          "Painel da rede: cobertura, atenção pedagógica e evolução ao longo do ano",
+        wide: true,
+      },
+      {
+        src: turmaDesktop,
+        alt: "Lançamento em sala da sondagem por estudante, com as hipóteses de escrita",
+        caption: "Lançamento em sala: hipótese de escrita por estudante",
+        wide: true,
+      },
+      {
+        src: painelMobile,
+        alt: "Painel da rede na versão para celular",
+        caption: "Painel no celular",
+      },
+      {
+        src: turmaMobile,
+        alt: "Tela da turma na versão para celular",
+        caption: "Turma no celular",
+      },
+      {
+        src: apresentacaoDesktop,
+        alt: "Página de apresentação do sistema, com público-alvo e funcionalidades",
+        caption: "Página de apresentação do sistema",
+        wide: true,
+      },
+    ],
     highlights: [
       "Autenticação e controle de permissões em nível de linha (RLS) com Supabase",
       "Upload e parsing automatizado de templates de alunos e turmas em lote",
