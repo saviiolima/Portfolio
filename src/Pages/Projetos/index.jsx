@@ -147,6 +147,7 @@ export default function Projetos() {
       {activeModalProject && (
         <S.ModalOverlay onClick={closeModal}>
           <S.ModalContent
+            $wide={Boolean(activeModalProject.screenshots)}
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
@@ -174,6 +175,25 @@ export default function Projetos() {
                 <li key={highlight}>{highlight}</li>
               ))}
             </ul>
+
+            {activeModalProject.screenshots && (
+              <>
+                <h4>Telas do Sistema</h4>
+                <S.Gallery>
+                  {activeModalProject.screenshots.map((shot) => (
+                    <figure key={shot.src} className={shot.wide ? "wide" : ""}>
+                      <img
+                        src={shot.src}
+                        alt={shot.alt}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <figcaption>{shot.caption}</figcaption>
+                    </figure>
+                  ))}
+                </S.Gallery>
+              </>
+            )}
 
             <h4>Tecnologias Utilizadas</h4>
             <S.TagList>
