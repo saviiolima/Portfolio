@@ -95,6 +95,110 @@ export const projectsData = [
     ],
   },
   {
+    id: "portal-educacional-v2",
+    title: "Portal Educacional v2 - SaaS Multi-município",
+    category: "Aplicações & Portais",
+    description:
+      "Plataforma SaaS para acompanhamento da aprendizagem na rede pública, com isolamento de dados por município, importação de planilhas e alertas automáticos.",
+    tags: ["React", "TypeScript", "Supabase", "PostgreSQL (RLS)", "Python"],
+    featured: true,
+    isPrivate: true,
+    privacyNote: "Sistema Interno / Rede Pública",
+    modalBadge: "Código-fonte Privado",
+    highlights: [
+      "Arquitetura multi-município com Row Level Security validada por testes automatizados (pytest) simulando cada papel",
+      "Importador em Python que valida planilhas, grava rascunho e publica os dados",
+      "Edge Functions para convites por e-mail e resumo diário de alertas",
+      "Modelo agregado por turma, sem identificar crianças, e MFA para acessos sensíveis",
+    ],
+  },
+  {
+    id: "alfabetiza",
+    title: "Alfabetiza - Acompanhamento da Alfabetização",
+    category: "Aplicações & Portais",
+    description:
+      "Protótipo para acompanhar a alfabetização no 1º e 2º ano, com registros por estudante, indicadores e gráficos de evolução (dados fictícios).",
+    tags: ["Next.js", "TypeScript", "Supabase", "Vitest"],
+    featured: false,
+    isPrivate: true,
+    privacyNote: "Protótipo / Dados Fictícios",
+    modalBadge: "Código-fonte Privado",
+    highlights: [
+      "Autenticação e sessão com Supabase SSR no Next.js (App Router)",
+      "Server Actions para cadastro, registros e gestão de turmas",
+      "Exportação de dados do estudante e impressão de relatórios",
+    ],
+  },
+  {
+    id: "calpre",
+    title: "CalPré - Calculadora de Precificação SaaS",
+    category: "Aplicações & Portais",
+    description:
+      "Ferramenta para modelagem financeira, ponto de equilíbrio e simulação de preços, com benchmark de contratações públicas (PNCP) e geração de proposta comercial.",
+    tags: ["React", "Vite", "Tailwind CSS", "Vitest"],
+    featured: false,
+    isPrivate: true,
+    privacyNote: "Ferramenta Interna",
+    modalBadge: "Código-fonte Privado",
+    highlights: [
+      "Gestão de múltiplos projetos com persistência local e backup em JSON",
+      "Benchmark com importação de CSV e estatísticas (média, mediana, mín e máx)",
+      "Cenários pessimista, esperado e otimista, com gráfico de break-even em SVG",
+      "Lógica financeira em funções puras cobertas por testes",
+    ],
+  },
+  {
+    id: "quadro",
+    title: "Quadro - Organização Pessoal",
+    category: "Aplicações & Portais",
+    description:
+      "App pessoal que reúne tarefas, projetos, notas, hábitos, finanças, saúde e estudos, com tela Hoje, relatórios e funcionamento offline como PWA.",
+    tags: ["React", "TypeScript", "Supabase", "Tailwind CSS", "PWA"],
+    featured: false,
+    isPrivate: true,
+    privacyNote: "Uso Pessoal",
+    modalBadge: "Código-fonte Privado",
+    highlights: [
+      "Busca global (Ctrl K) com criação de tarefas por texto em português",
+      "Instalável como aplicativo e com leitura offline",
+      "Dados protegidos por login e RLS, com modo local sem configuração",
+    ],
+  },
+  {
+    id: "diario",
+    title: "Diário - Escrita com Controle de Visibilidade",
+    category: "Aplicações & Portais",
+    description:
+      "Diário pessoal em que cada entrada define quem pode ver (privada, conexões ou pública), com fotos, viagens em grupo, reações e avisos.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "SQLite", "Zod"],
+    featured: false,
+    isPrivate: true,
+    privacyNote: "Dados Pessoais",
+    modalBadge: "Código-fonte Privado",
+    highlights: [
+      "Visibilidade por entrada, aplicada também às fotos e ao feed",
+      "Sessão em cookie httpOnly assinado e senhas com hash",
+      "Conexões entre usuários, comentários, reações e central de avisos",
+    ],
+  },
+  {
+    id: "fithealth",
+    title: "FitHealth - Plataforma para Academias",
+    category: "Aplicações & Portais",
+    description:
+      "Plataforma white-label multi-tenant com lotação quase em tempo real por check-ins, registro de treino, prontidão diária e painel do gestor.",
+    tags: ["React", "Fastify", "TypeScript", "SQLite", "Tailwind CSS"],
+    featured: false,
+    isPrivate: true,
+    privacyNote: "Repositório Privado",
+    modalBadge: "Código-fonte Privado",
+    highlights: [
+      "Monorepo com API Fastify e front React (TanStack Query)",
+      "Isolamento multi-tenant: o gym_id nunca vem do cliente",
+      "Token JWT em cookie httpOnly e validação de entrada com Zod",
+    ],
+  },
+  {
     id: "portal-educacional",
     title: "Portal Educacional Integrado",
     category: "Aplicações & Portais",
@@ -165,6 +269,22 @@ export const projectsData = [
     highlights: [
       "Layout otimizado para conversão mobile e desktop",
       "Componentilização limpa e estilização modular com Styled-Components",
+    ],
+  },
+  {
+    id: "lm-chaveiro",
+    title: "LM Chaveiro Landing Page",
+    category: "Frontend",
+    description:
+      "Landing page para serviço de chaveiro 24h, com catálogo de serviços, formas de pagamento e atalhos de contato por WhatsApp e telefone.",
+    tags: ["React", "Vite", "Tailwind CSS", "Responsividade"],
+    featured: false,
+    isPrivate: false,
+    liveDemo: "https://lm-chaveiro.vercel.app",
+    github: "https://github.com/saviiolima/lm-chaveiro",
+    highlights: [
+      "Layout mobile-first com barra de ação fixa para contato rápido",
+      "Mensagens de WhatsApp pré-preenchidas por tipo de serviço",
     ],
   },
   {
