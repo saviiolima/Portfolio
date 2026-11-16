@@ -13,7 +13,7 @@ import prismaMobile from "../assets/prisma/inicio-mobile.webp";
 export const projectsData = [
   {
     id: "dash-financeiro",
-    title: "Dashboard Financeiro - Aplicação Segura",
+    title: "Prisma Finance - Gestão Financeira Segura",
     category: "Aplicações & Portais",
     description:
       "Plataforma experimental de controle financeiro integrada ao Google Sheets com 4 camadas essenciais de blindagem de segurança e IA.",
