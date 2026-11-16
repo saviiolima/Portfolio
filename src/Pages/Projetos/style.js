@@ -67,6 +67,12 @@ export const FilterButton = styled.button`
   }
 `;
 
+export const MoreWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+`;
+
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));

@@ -10,8 +10,11 @@ import {
   FaUsers,
 } from "react-icons/fa";
 
+const INITIAL_VISIBLE = 6;
+
 export default function Projetos() {
   const [selectedFilter, setSelectedFilter] = useState("Todos");
+  const [showAll, setShowAll] = useState(false);
   const [activeModalProject, setActiveModalProject] = useState(null);
   const closeBtnRef = useRef(null);
   const lastTriggerRef = useRef(null);
@@ -45,10 +48,15 @@ export default function Projetos() {
     "Frontend",
   ];
 
-  const filteredProjects =
-    selectedFilter === "Todos"
-      ? projectsData
-      : projectsData.filter((p) => p.category === selectedFilter);
+  const isAll = selectedFilter === "Todos";
+  const filteredProjects = isAll
+    ? [...projectsData].sort((a, b) => Number(b.featured) - Number(a.featured))
+    : projectsData.filter((p) => p.category === selectedFilter);
+  const visibleProjects =
+    isAll && !showAll
+      ? filteredProjects.slice(0, INITIAL_VISIBLE)
+      : filteredProjects;
+  const hiddenCount = filteredProjects.length - visibleProjects.length;
 
   return (
     <S.Container>
@@ -75,7 +83,7 @@ export default function Projetos() {
       </S.FilterBar>
 
       <S.Grid>
-        {filteredProjects.map((project) => (
+        {visibleProjects.map((project) => (
           <S.ProjectCard key={project.id} $featured={project.featured}>
             <div>
               <S.CardHeader>
@@ -142,6 +150,17 @@ export default function Projetos() {
           </S.ProjectCard>
         ))}
       </S.Grid>
+
+      {isAll && filteredProjects.length > INITIAL_VISIBLE && (
+        <S.MoreWrapper>
+          <S.FilterButton
+            $active={false}
+            onClick={() => setShowAll((prev) => !prev)}
+          >
+            {showAll ? "Mostrar menos" : `Mostrar mais (${hiddenCount})`}
+          </S.FilterButton>
+        </S.MoreWrapper>
+      )}
 
       {/* Modal de Detalhes da Arquitetura / Case Study */}
       {activeModalProject && (
