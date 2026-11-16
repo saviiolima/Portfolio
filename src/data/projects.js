@@ -3,6 +3,10 @@ import turmaDesktop from "../assets/evolutiva/turma-desktop.webp";
 import apresentacaoDesktop from "../assets/evolutiva/apresentacao-desktop.webp";
 import painelMobile from "../assets/evolutiva/painel-mobile.webp";
 import turmaMobile from "../assets/evolutiva/turma-mobile.webp";
+import v2PainelDesktop from "../assets/portal-v2/painel-desktop.webp";
+import v2MetasDesktop from "../assets/portal-v2/metas-desktop.webp";
+import v2TrajetoriaDesktop from "../assets/portal-v2/trajetoria-desktop.webp";
+import v2AlertasDesktop from "../assets/portal-v2/alertas-desktop.webp";
 
 export const projectsData = [
   {
@@ -105,6 +109,32 @@ export const projectsData = [
     isPrivate: true,
     privacyNote: "Sistema Interno / Rede Pública",
     modalBadge: "Código-fonte Privado",
+    screenshots: [
+      {
+        src: v2PainelDesktop,
+        alt: "Painel do município com alertas ativos, frequência média e turmas em risco",
+        caption: "Painel do município (modo demonstração, dados fictícios)",
+        wide: true,
+      },
+      {
+        src: v2MetasDesktop,
+        alt: "Tela de metas com indicadores calculados no portal e comparação com a região",
+        caption: "Metas: onde estamos, a meta e a comparação com a região",
+        wide: true,
+      },
+      {
+        src: v2TrajetoriaDesktop,
+        alt: "Trajetória de aprendizagem com hipóteses de escrita por bimestre, em totais por turma",
+        caption: "Trajetória por bimestre, sempre em totais por turma",
+        wide: true,
+      },
+      {
+        src: v2AlertasDesktop,
+        alt: "Lista de alertas automáticos por turma com ação recomendada",
+        caption: "Alertas automáticos por turma, com o que fazer",
+        wide: true,
+      },
+    ],
     highlights: [
       "Arquitetura multi-município com Row Level Security validada por testes automatizados (pytest) simulando cada papel",
       "Importador em Python que valida planilhas, grava rascunho e publica os dados",
