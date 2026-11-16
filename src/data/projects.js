@@ -257,21 +257,6 @@ export const projectsData = [
     ],
   },
   {
-    id: "phill-reboque",
-    title: "Phill Reboque Landing Page",
-    category: "Frontend",
-    description:
-      "Landing page comercial de alta conversão para serviços de reboque, com design responsivo e foco em canais de contato rápidos.",
-    tags: ["React", "Styled-Components", "Responsividade"],
-    featured: false,
-    isPrivate: false,
-    badge: "Projeto em parceria",
-    highlights: [
-      "Layout otimizado para conversão mobile e desktop",
-      "Componentilização limpa e estilização modular com Styled-Components",
-    ],
-  },
-  {
     id: "lm-chaveiro",
     title: "LM Chaveiro Landing Page",
     category: "Frontend",
