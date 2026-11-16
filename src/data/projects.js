@@ -7,6 +7,8 @@ import v2PainelDesktop from "../assets/portal-v2/painel-desktop.webp";
 import v2MetasDesktop from "../assets/portal-v2/metas-desktop.webp";
 import v2TrajetoriaDesktop from "../assets/portal-v2/trajetoria-desktop.webp";
 import v2AlertasDesktop from "../assets/portal-v2/alertas-desktop.webp";
+import prismaDesktop from "../assets/prisma/inicio-desktop.webp";
+import prismaMobile from "../assets/prisma/inicio-mobile.webp";
 
 export const projectsData = [
   {
@@ -20,6 +22,19 @@ export const projectsData = [
     isPrivate: true,
     privacyNote: "Repositório Privado",
     modalBadge: "Código-fonte Privado",
+    screenshots: [
+      {
+        src: prismaDesktop,
+        alt: "Tela inicial do Prisma Finance com saldo livre, entradas, taxa de poupança, gráfico de entradas e gastos e divisão das despesas por categoria",
+        caption: "Tela inicial no desktop (conta demo, dados fictícios)",
+        wide: true,
+      },
+      {
+        src: prismaMobile,
+        alt: "Tela inicial do Prisma Finance na versão para celular",
+        caption: "Tela inicial no celular",
+      },
+    ],
     highlights: [
       "Autenticação interna por Token Secreto (APP_SECRET_TOKEN) interceptando GET/POST no Apps Script",
       "Isolamento completo da chave do Gemini no backend, ocultando credenciais do frontend",
