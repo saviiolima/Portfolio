@@ -164,11 +164,11 @@ export const projectsData = [
     title: "CalPré - Calculadora de Precificação SaaS",
     category: "Aplicações & Portais",
     description:
-      "Ferramenta para modelagem financeira, ponto de equilíbrio e simulação de preços, com benchmark de contratações públicas (PNCP) e geração de proposta comercial.",
+      "Ferramenta para modelagem financeira, ponto de equilíbrio e simulação de preços, com benchmark de contratações públicas (PNCP) e geração de proposta comercial. Protótipo em evolução.",
     tags: ["React", "Vite", "Tailwind CSS", "Vitest"],
     featured: false,
     isPrivate: true,
-    privacyNote: "Ferramenta Interna",
+    privacyNote: "Protótipo",
     modalBadge: "Código-fonte Privado",
     highlights: [
       "Gestão de múltiplos projetos com persistência local e backup em JSON",
@@ -182,11 +182,11 @@ export const projectsData = [
     title: "Quadro - Organização Pessoal",
     category: "Aplicações & Portais",
     description:
-      "App pessoal que reúne tarefas, projetos, notas, hábitos, finanças, saúde e estudos, com tela Hoje, relatórios e funcionamento offline como PWA.",
+      "App pessoal que reúne tarefas, projetos, notas, hábitos, finanças, saúde e estudos, com tela Hoje, relatórios e funcionamento offline como PWA. Protótipo em evolução.",
     tags: ["React", "TypeScript", "Supabase", "Tailwind CSS", "PWA"],
     featured: false,
     isPrivate: true,
-    privacyNote: "Uso Pessoal",
+    privacyNote: "Protótipo",
     modalBadge: "Código-fonte Privado",
     highlights: [
       "Busca global (Ctrl K) com criação de tarefas por texto em português",
