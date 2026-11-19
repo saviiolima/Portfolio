@@ -4,9 +4,9 @@ Site pessoal com apresentação, trajetória e projetos. Publicado em <https://s
 
 ## Stack
 
-- React 18 + Vite
+- React 19 + Vite 8
 - React Router (rotas carregadas sob demanda)
-- styled-components
+- styled-components (paleta e tokens em `src/Styles/globalstyle.js`)
 - react-icons
 - Vercel (hospedagem e Web Analytics)
 
@@ -14,20 +14,20 @@ Site pessoal com apresentação, trajetória e projetos. Publicado em <https://s
 
 ```
 src/
-  Components/   Header, Footer, LoadingScreen, Benchmark
-  Pages/        Inicio, Sobre, Projetos
+  Components/   Header, Footer, Logo, LoadingScreen, Skills
+  Pages/        Inicio, Sobre, Projetos, NaoEncontrada (404)
   data/         projects.js (lista de projetos exibida em /Projetos)
   Routes/       rotas e tela de boot
   Styles/       estilos globais
-public/         favicon e imagem de pré-visualização (og-image.png)
+public/         favicons (svg, png, ico), apple-touch-icon e imagem de pré-visualização (og-image.png)
 ```
 
 ## Como rodar
 
 ```bash
-npm install
+npm install       # Node 20.19+ ou 22.12+ (exigência do Vite 8)
 npm run dev      # servidor de desenvolvimento
-npm run lint     # ESLint
+npm run lint     # ESLint (flat config em eslint.config.js)
 npm run build    # build de produção em dist/
 npm run preview  # serve o build localmente
 ```
