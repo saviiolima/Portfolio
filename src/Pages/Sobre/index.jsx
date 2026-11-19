@@ -1,5 +1,5 @@
 import * as S from "./style";
-import SkillsBenchmark from "../../Components/Benchmark/index.jsx";
+import Skills from "../../Components/Skills";
 import {
   FaGraduationCap,
   FaBriefcase,
@@ -74,14 +74,14 @@ export default function Sobre() {
       <S.BenchmarkSection>
         <div className="section-title">
           <FaCode size={18} />
-          <h2>System Benchmarks & Core Skills</h2>
+          <h2>Stack & Tecnologias</h2>
         </div>
         <p className="section-desc">
-          Métricas de desempenho e avaliação em tempo real das principais
-          tecnologias e stacks utilizadas no dia a dia.
+          Tecnologias que uso nos projetos publicados, de interfaces e dados
+          a controle de acesso e testes.
         </p>
 
-        <SkillsBenchmark />
+        <Skills />
       </S.BenchmarkSection>
     </S.Container>
   );
