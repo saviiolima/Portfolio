@@ -1,5 +1,5 @@
-import { useState, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect, lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import LoadingScreen from "../Components/LoadingScreen";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
@@ -12,14 +12,29 @@ const NaoEncontrada = lazy(() => import("../Pages/NaoEncontrada"));
 
 const BOOT_KEY = "boot-seen";
 
+// Quem prefere movimento reduzido não precisa esperar a tela de boot
+const prefersReducedMotion = () =>
+  typeof window.matchMedia === "function" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 // A tela de boot aparece só na primeira visita da sessão
 const hasSeenBoot = () => {
+  if (prefersReducedMotion()) return true;
   try {
     return sessionStorage.getItem(BOOT_KEY) === "1";
   } catch {
     return false;
   }
 };
+
+// Volta ao topo ao trocar de página
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 const markBootSeen = () => {
   try {
@@ -45,6 +60,7 @@ export default function Rotas() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
 
       <Suspense fallback={<div style={{ minHeight: "80vh" }} />}>
