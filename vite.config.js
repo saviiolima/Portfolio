@@ -4,12 +4,16 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    minify: "esbuild",
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "react-router-dom"],
-          styled: ["styled-components"],
+        // Separa as bibliotecas em pacotes próprios para melhor cache
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return undefined;
+          if (/node_modules\/(react|react-dom|react-router|react-router-dom|scheduler)\//.test(id)) {
+            return "vendor";
+          }
+          if (id.includes("styled-components")) return "styled";
+          return undefined;
         },
       },
     },

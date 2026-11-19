@@ -7,7 +7,6 @@ import {
   FaLock,
   FaInfoCircle,
   FaTimes,
-  FaUsers,
 } from "react-icons/fa";
 
 const INITIAL_VISIBLE = 6;
@@ -119,11 +118,6 @@ export default function Projetos() {
                   {project.isPrivate && (
                     <span className="privacy-badge">
                       <FaLock size={9} /> {project.privacyNote || "Privado"}
-                    </span>
-                  )}
-                  {!project.isPrivate && project.badge && (
-                    <span className="privacy-badge">
-                      <FaUsers size={9} /> {project.badge}
                     </span>
                   )}
                 </div>
