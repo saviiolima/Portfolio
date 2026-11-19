@@ -8,6 +8,7 @@ import Footer from "../Components/Footer";
 const Inicio = lazy(() => import("../Pages/Inicio"));
 const Sobre = lazy(() => import("../Pages/Sobre"));
 const Projetos = lazy(() => import("../Pages/Projetos"));
+const NaoEncontrada = lazy(() => import("../Pages/NaoEncontrada"));
 
 const BOOT_KEY = "boot-seen";
 
@@ -51,6 +52,7 @@ export default function Rotas() {
           <Route path="/" element={<Inicio />} />
           <Route path="/Sobre" element={<Sobre />} />
           <Route path="/Projetos" element={<Projetos />} />
+          <Route path="*" element={<NaoEncontrada />} />
         </Routes>
       </Suspense>
 

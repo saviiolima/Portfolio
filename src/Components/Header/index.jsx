@@ -1,5 +1,5 @@
 import * as S from "./style";
-import logoImg from "../../assets/logo.svg";
+import logoImg from "../../assets/logo.webp";
 
 export default function Header() {
   return (
