@@ -16,15 +16,15 @@ export const Container = styled.main`
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--primary-light);
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    background: rgba(219, 185, 134, 0.1);
+    border: 1px solid rgba(219, 185, 134, 0.25);
     border-radius: 50px;
     padding: 6px 14px;
   }
 
   h1 {
     font-size: 2.4rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.5px;
 
     @media (max-width: 600px) {
@@ -44,7 +44,7 @@ export const HomeLink = styled(Link)`
   padding: 12px 24px;
   border-radius: 8px;
   background: var(--primary);
-  color: #06090c;
+  color: #06141B;
   font-weight: 700;
   transition:
     transform 0.2s ease,

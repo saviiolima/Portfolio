@@ -13,9 +13,9 @@ export const HeaderSection = styled.div`
   .tag {
     display: inline-block;
     padding: 6px 14px;
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(219, 185, 134, 0.1);
     color: var(--primary-light);
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(219, 185, 134, 0.25);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -24,7 +24,7 @@ export const HeaderSection = styled.div`
 
   h1 {
     font-size: 2.6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 12px;
 
@@ -42,9 +42,13 @@ export const HeaderSection = styled.div`
 
 export const ContentGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
   gap: 28px;
   margin-bottom: 60px;
+
+  @media (min-width: 860px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const Card = styled.div`
@@ -57,7 +61,7 @@ export const Card = styled.div`
 
   &:hover {
     transform: translateY(-4px);
-    border-color: rgba(16, 185, 129, 0.35);
+    border-color: rgba(219, 185, 134, 0.35);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
   }
 
@@ -65,13 +69,13 @@ export const Card = styled.div`
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(219, 185, 134, 0.12);
     color: var(--primary-light);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(219, 185, 134, 0.25);
   }
 
   h3 {
@@ -102,7 +106,7 @@ export const BenchmarkSection = styled.section`
 
     h2 {
       font-size: 1.8rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--text-main);
       letter-spacing: -0.5px;
     }

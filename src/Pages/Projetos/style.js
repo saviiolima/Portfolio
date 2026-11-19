@@ -13,9 +13,9 @@ export const HeaderSection = styled.div`
   .tag {
     display: inline-block;
     padding: 6px 14px;
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(219, 185, 134, 0.1);
     color: var(--primary-light);
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(219, 185, 134, 0.25);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -24,7 +24,7 @@ export const HeaderSection = styled.div`
 
   h1 {
     font-size: 2.6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.5px;
     margin-bottom: 12px;
 
@@ -51,7 +51,7 @@ export const FilterBar = styled.div`
 export const FilterButton = styled.button`
   background: ${(props) =>
     props.$active ? "var(--primary)" : "rgba(255, 255, 255, 0.04)"};
-  color: ${(props) => (props.$active ? "#06090c" : "var(--text-muted)")};
+  color: ${(props) => (props.$active ? "#06141B" : "var(--text-muted)")};
   font-weight: ${(props) => (props.$active ? "700" : "500")};
   border: 1px solid
     ${(props) => (props.$active ? "var(--primary)" : "var(--border-card)")};
@@ -61,8 +61,8 @@ export const FilterButton = styled.button`
   transition: all 0.25s ease;
 
   &:hover {
-    color: ${(props) => (props.$active ? "#06090c" : "var(--text-main)")};
-    border-color: rgba(16, 185, 129, 0.5);
+    color: ${(props) => (props.$active ? "#06141B" : "var(--text-main)")};
+    border-color: rgba(219, 185, 134, 0.5);
     transform: translateY(-1px);
   }
 `;
@@ -105,17 +105,17 @@ export const ProjectCard = styled.div`
     height: 3px;
     background: ${(props) =>
       props.$featured
-        ? "linear-gradient(90deg, var(--primary), var(--accent))"
+        ? "var(--primary)"
         : "transparent"};
     opacity: 0.8;
   }
 
   &:hover {
     transform: translateY(-5px);
-    border-color: rgba(16, 185, 129, 0.35);
+    border-color: rgba(219, 185, 134, 0.35);
     box-shadow:
       0 15px 35px rgba(0, 0, 0, 0.5),
-      0 0 25px rgba(16, 185, 129, 0.1);
+      0 0 25px rgba(219, 185, 134, 0.1);
   }
 `;
 
@@ -124,8 +124,10 @@ export const CardHeader = styled.div`
 
   .top-meta {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 6px 10px;
     margin-bottom: 8px;
   }
 
@@ -138,6 +140,7 @@ export const CardHeader = styled.div`
   }
 
   .privacy-badge {
+    white-space: nowrap;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -145,9 +148,9 @@ export const CardHeader = styled.div`
     font-weight: 600;
     padding: 3px 8px;
     border-radius: 50px;
-    background: rgba(245, 158, 11, 0.1);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.25);
+    background: rgba(155, 168, 171, 0.1);
+    color: #9BA8AB;
+    border: 1px solid rgba(155, 168, 171, 0.25);
   }
 
   h3 {
@@ -176,7 +179,7 @@ export const TagList = styled.div`
 export const Tag = styled.span`
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
+  color: #CCD0CF;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 4px 10px;
@@ -204,13 +207,13 @@ export const CardActions = styled.div`
   }
 
   .primary-action {
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(219, 185, 134, 0.12);
     color: var(--primary-light);
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(219, 185, 134, 0.25);
 
     &:hover {
       background: var(--primary);
-      color: #06090c;
+      color: #06141B;
     }
   }
 
@@ -233,8 +236,8 @@ export const CardActions = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.1);
 
     &:hover {
-      background: rgba(16, 185, 129, 0.15);
-      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(219, 185, 134, 0.15);
+      border-color: rgba(219, 185, 134, 0.4);
       color: var(--primary-light);
     }
   }
@@ -253,8 +256,8 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  background: #090f14;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: #0B1A24;
+  border: 1px solid rgba(219, 185, 134, 0.25);
   border-radius: 20px;
   max-width: ${(props) => (props.$wide ? "820px" : "620px")};
   width: 100%;
@@ -290,9 +293,9 @@ export const ModalContent = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(245, 158, 11, 0.12);
-    color: #f59e0b;
-    border: 1px solid rgba(245, 158, 11, 0.3);
+    background: rgba(155, 168, 171, 0.12);
+    color: #9BA8AB;
+    border: 1px solid rgba(155, 168, 171, 0.3);
     padding: 4px 10px;
     border-radius: 50px;
     font-size: 0.78rem;
@@ -333,7 +336,7 @@ export const ModalContent = styled.div`
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      color: #cbd5e1;
+      color: #CCD0CF;
       font-size: 0.9rem;
       line-height: 1.5;
 

@@ -7,7 +7,7 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
   border-top: 1px solid var(--border-card);
-  background: rgba(11, 15, 23, 0.6);
+  background: rgba(17, 33, 45, 0.6);
   backdrop-filter: blur(10px);
   color: var(--text-muted);
   font-size: 0.88rem;

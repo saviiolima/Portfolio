@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 8%;
-  background: rgba(6, 9, 12, 0.85);
+  background: rgba(6, 20, 27, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-card);
@@ -20,19 +20,34 @@ export const HeaderContainer = styled.header`
 export const LogoLink = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: -0.5px;
+  gap: 12px;
   color: var(--text-main);
 
-  span {
-    color: var(--primary);
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
   }
 
-  img {
-    height: 36px;
-    border-radius: 8px;
+  strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  small {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-top: 3px;
+  }
+
+  @media (max-width: 420px) {
+    small {
+      display: none;
+    }
   }
 `;
 
@@ -46,15 +61,16 @@ export const Nav = styled.nav`
   }
 `;
 
-export const NavLink = styled(Link)`
+export const NavItem = styled(NavLink)`
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
   transition: color 0.25s ease;
 
-  &:hover {
-    color: var(--primary-light);
+  &:hover,
+  &.active {
+    color: var(--text-main);
   }
 
   &::after {
@@ -69,7 +85,8 @@ export const NavLink = styled(Link)`
     border-radius: 2px;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &.active::after {
     width: 100%;
   }
 `;
