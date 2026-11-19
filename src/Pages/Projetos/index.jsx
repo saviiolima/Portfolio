@@ -17,6 +17,7 @@ export default function Projetos() {
   const [showAll, setShowAll] = useState(false);
   const [activeModalProject, setActiveModalProject] = useState(null);
   const closeBtnRef = useRef(null);
+  const modalRef = useRef(null);
   const lastTriggerRef = useRef(null);
 
   const openModal = (project, event) => {
@@ -30,13 +31,39 @@ export default function Projetos() {
     if (!activeModalProject) return undefined;
 
     closeBtnRef.current?.focus();
+
+    // Trava a rolagem da página enquanto o modal está aberto
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
     const onKeyDown = (e) => {
-      if (e.key === "Escape") setActiveModalProject(null);
+      if (e.key === "Escape") {
+        setActiveModalProject(null);
+        return;
+      }
+      if (e.key !== "Tab" || !modalRef.current) return;
+
+      // Mantém o foco dentro do modal
+      const focusable = modalRef.current.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", onKeyDown);
 
     return () => {
       document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
       lastTriggerRef.current?.focus();
     };
   }, [activeModalProject]);
@@ -166,6 +193,7 @@ export default function Projetos() {
       {activeModalProject && (
         <S.ModalOverlay onClick={closeModal}>
           <S.ModalContent
+            ref={modalRef}
             $wide={Boolean(activeModalProject.screenshots)}
             role="dialog"
             aria-modal="true"

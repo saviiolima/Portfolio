@@ -23,10 +23,19 @@ const CODE_LINES = [
   },
 ];
 
+const reducedMotion =
+  typeof window.matchMedia === "function" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 export default function Inicio() {
-  const [visibleCount, setVisibleCount] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(
+    reducedMotion ? CODE_LINES.length : 0,
+  );
 
   useEffect(() => {
+    // Sem animação: o código fica completo e parado
+    if (reducedMotion) return undefined;
+
     let timer;
 
     if (visibleCount < CODE_LINES.length) {
@@ -138,7 +147,7 @@ export default function Inicio() {
           </div>
         </div>
 
-        <pre className="terminal-body">
+        <pre className="terminal-body" aria-hidden="true">
           <code>
             {CODE_LINES.slice(0, visibleCount).map((line, idx) => (
               <div key={idx} className="code-line">
