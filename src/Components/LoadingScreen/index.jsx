@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import * as S from "./style";
+import Logo from "../Logo";
 
 const BOOT_LOGS = [
-  "INITIALIZING SYSTEM ARCHITECTURE...",
-  "LOADING CORE MODULES & DRIVERS...",
-  "RESOLVING API CONTRACTS & SECURITY POLICIES...",
-  "CALIBRATING TELEMETRY BENCHMARKS...",
-  "STARTING USER ENVIRONMENT: SAVIO_LIMA@PRODUCTION",
+  "Preparando o ambiente...",
+  "Carregando projetos...",
+  "Organizando interfaces...",
+  "Conferindo detalhes...",
+  "Tudo pronto.",
 ];
 
 // eslint-disable-next-line react/prop-types
@@ -47,10 +48,10 @@ export default function LoadingScreen({ onFinish = () => {} }) {
     <S.Overlay>
       <S.Container>
         <S.LogoBox>
-          <span className="logo-text">SL</span>
+          <Logo size={44} />
         </S.LogoBox>
 
-        <S.Title>SL_OS // INITIALIZING</S.Title>
+        <S.Title>Sávio Lima</S.Title>
 
         <S.ProgressBarTrack>
           <S.ProgressBarFill $width={progress} />

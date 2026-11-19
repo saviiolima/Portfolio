@@ -39,16 +39,13 @@ export const InfoBox = styled.div`
 
   h1 {
     font-size: 3.2rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.15;
     margin-bottom: 16px;
     letter-spacing: -1px;
 
     span {
-      background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--primary);
     }
 
     @media (max-width: 600px) {
@@ -84,8 +81,8 @@ export const PrimaryBtn = styled.a`
   align-items: center;
   gap: 10px;
   padding: 13px 26px;
-  background: linear-gradient(135deg, #10b981, #06b6d4);
-  color: #06090c;
+  background: var(--primary);
+  color: #06141B;
   font-weight: 700;
   font-size: 0.95rem;
   border-radius: 10px;
@@ -96,7 +93,7 @@ export const PrimaryBtn = styled.a`
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+    box-shadow: 0 8px 24px var(--primary-glow);
   }
 `;
 
@@ -116,7 +113,7 @@ export const SecondaryBtn = styled.a`
 
   &:hover {
     background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(16, 185, 129, 0.35);
+    border-color: rgba(219, 185, 134, 0.35);
     transform: translateY(-2px);
   }
 `;
@@ -125,12 +122,12 @@ export const TerminalWindow = styled.div`
   width: 100%;
   max-width: 490px;
   min-height: 380px;
-  background: rgba(10, 16, 20, 0.88);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(6, 20, 27, 0.88);
+  border: 1px solid rgba(219, 185, 134, 0.2);
   border-radius: 14px;
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.6),
-    0 0 25px rgba(16, 185, 129, 0.12);
+    0 0 25px rgba(219, 185, 134, 0.12);
   overflow: hidden;
   backdrop-filter: blur(16px);
   text-align: left;
@@ -155,13 +152,13 @@ export const TerminalWindow = styled.div`
         border-radius: 50%;
 
         &.red {
-          background: #ef4444;
+          background: #4A5C6A;
         }
         &.yellow {
-          background: #f59e0b;
+          background: #9BA8AB;
         }
         &.green {
-          background: #10b981;
+          background: #DBB986;
         }
       }
     }
@@ -181,7 +178,7 @@ export const TerminalWindow = styled.div`
     font-family: "Fira Code", "JetBrains Mono", Consolas, monospace;
     font-size: 0.88rem;
     line-height: 1.65;
-    color: #e2e8f0;
+    color: #CCD0CF;
     flex-grow: 1;
 
     .code-line {
@@ -190,18 +187,18 @@ export const TerminalWindow = styled.div`
     }
 
     .keyword {
-      color: #34d399;
+      color: #E6CDA3;
       font-weight: 600;
     }
     .class-name {
-      color: #06b6d4;
+      color: #9BA8AB;
       font-weight: 600;
     }
     .string {
-      color: #a7f3d0;
+      color: #F0DFC3;
     }
     .func {
-      color: #38bdf8;
+      color: #9BA8AB;
     }
 
     .terminal-cursor {

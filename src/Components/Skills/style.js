@@ -4,12 +4,12 @@ export const Container = styled.div`
   width: 100%;
   max-width: 820px;
   margin: 30px auto 0 auto;
-  background: #090e12;
-  border: 1px solid rgba(16, 185, 129, 0.28);
+  background: #0B1A24;
+  border: 1px solid rgba(219, 185, 134, 0.28);
   border-radius: 10px;
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(16, 185, 129, 0.08);
+    0 0 25px rgba(219, 185, 134, 0.08);
   overflow: hidden;
   font-family: "Fira Code", "JetBrains Mono", Consolas, monospace;
 `;
@@ -31,13 +31,13 @@ export const WindowHeader = styled.div`
       height: 10px;
       border-radius: 50%;
       &.red {
-        background: #ef4444;
+        background: #4A5C6A;
       }
       &.yellow {
-        background: #f59e0b;
+        background: #9BA8AB;
       }
       &.green {
-        background: #10b981;
+        background: #DBB986;
       }
     }
   }
