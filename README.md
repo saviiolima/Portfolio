@@ -19,6 +19,7 @@ src/
   data/         projects.ts (lista de projetos e tipos, exibida em /Projetos)
   Routes/       rotas e tela de boot
   Styles/       estilos globais
+marca/          símbolo em SVG (fundo claro e escuro) e ícone de app
 public/         favicons (svg, png, ico), apple-touch-icon e imagem de pré-visualização (og-image.png)
 ```
 
