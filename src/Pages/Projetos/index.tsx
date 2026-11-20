@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import type { MouseEvent as ReactMouseEvent } from "react";
 import * as S from "./style";
 import { projectsData } from "../../data/projects";
+import type { PrivateProject, ProjectCategory } from "../../data/projects";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -11,15 +13,27 @@ import {
 
 const INITIAL_VISIBLE = 6;
 
-export default function Projetos() {
-  const [selectedFilter, setSelectedFilter] = useState("Todos");
-  const [showAll, setShowAll] = useState(false);
-  const [activeModalProject, setActiveModalProject] = useState(null);
-  const closeBtnRef = useRef(null);
-  const modalRef = useRef(null);
-  const lastTriggerRef = useRef(null);
+type Filter = "Todos" | ProjectCategory;
 
-  const openModal = (project, event) => {
+const CATEGORIES: Filter[] = [
+  "Todos",
+  "Aplicações & Portais",
+  "Dashboards & Dados",
+  "Frontend",
+];
+
+export default function Projetos() {
+  const [selectedFilter, setSelectedFilter] = useState<Filter>("Todos");
+  const [showAll, setShowAll] = useState(false);
+  const [activeModalProject, setActiveModalProject] = useState<PrivateProject | null>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const lastTriggerRef = useRef<HTMLElement | null>(null);
+
+  const openModal = (
+    project: PrivateProject,
+    event: ReactMouseEvent<HTMLButtonElement>,
+  ) => {
     lastTriggerRef.current = event.currentTarget;
     setActiveModalProject(project);
   };
@@ -35,7 +49,7 @@ export default function Projetos() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const onKeyDown = (e) => {
+    const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setActiveModalProject(null);
         return;
@@ -43,7 +57,7 @@ export default function Projetos() {
       if (e.key !== "Tab" || !modalRef.current) return;
 
       // Mantém o foco dentro do modal
-      const focusable = modalRef.current.querySelectorAll(
+      const focusable = modalRef.current.querySelectorAll<HTMLElement>(
         'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
       );
       if (focusable.length === 0) return;
@@ -67,13 +81,6 @@ export default function Projetos() {
     };
   }, [activeModalProject]);
 
-  const categories = [
-    "Todos",
-    "Aplicações & Portais",
-    "Dashboards & Dados",
-    "Frontend",
-  ];
-
   const isAll = selectedFilter === "Todos";
   const filteredProjects = isAll
     ? [...projectsData].sort((a, b) => Number(b.featured) - Number(a.featured))
@@ -96,7 +103,7 @@ export default function Projetos() {
       </S.HeaderSection>
 
       <S.FilterBar>
-        {categories.map((cat) => (
+        {CATEGORIES.map((cat) => (
           <S.FilterButton
             key={cat}
             $active={selectedFilter === cat}

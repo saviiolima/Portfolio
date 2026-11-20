@@ -10,14 +10,19 @@ const BOOT_LOGS = [
   "Tudo pronto.",
 ];
 
-// eslint-disable-next-line react/prop-types
-export default function LoadingScreen({ onFinish = () => {} }) {
+interface LoadingScreenProps {
+  onFinish?: () => void;
+}
+
+export default function LoadingScreen({
+  onFinish = () => {},
+}: LoadingScreenProps) {
   const [logIndex, setLogIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     // Progresso fluido até 100%
-    const progressInterval = setInterval(() => {
+    const progressInterval: ReturnType<typeof setInterval> = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(progressInterval);

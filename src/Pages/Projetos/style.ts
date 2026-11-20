@@ -48,7 +48,7 @@ export const FilterBar = styled.div`
   margin-bottom: 45px;
 `;
 
-export const FilterButton = styled.button`
+export const FilterButton = styled.button<{ $active: boolean }>`
   background: ${(props) =>
     props.$active ? "var(--primary)" : "rgba(255, 255, 255, 0.04)"};
   color: ${(props) => (props.$active ? "#06141B" : "var(--text-muted)")};
@@ -83,7 +83,7 @@ export const Grid = styled.div`
   }
 `;
 
-export const ProjectCard = styled.div`
+export const ProjectCard = styled.div<{ $featured: boolean }>`
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: 18px;
@@ -255,7 +255,7 @@ export const ModalOverlay = styled.div`
   padding: 20px;
 `;
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.div<{ $wide: boolean }>`
   background: #0B1A24;
   border: 1px solid rgba(219, 185, 134, 0.25);
   border-radius: 20px;

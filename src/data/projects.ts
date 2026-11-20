@@ -10,7 +10,47 @@ import v2AlertasDesktop from "../assets/portal-v2/alertas-desktop.webp";
 import prismaDesktop from "../assets/prisma/inicio-desktop.webp";
 import prismaMobile from "../assets/prisma/inicio-mobile.webp";
 
-export const projectsData = [
+export type ProjectCategory =
+  | "Aplicações & Portais"
+  | "Dashboards & Dados"
+  | "Frontend";
+
+export interface Screenshot {
+  src: string;
+  alt: string;
+  caption: string;
+  /** Ocupa a largura inteira da galeria (telas de desktop) */
+  wide?: boolean;
+}
+
+interface ProjectBase {
+  id: string;
+  title: string;
+  category: ProjectCategory;
+  description: string;
+  tags: string[];
+  featured: boolean;
+  highlights: string[];
+}
+
+/** Repositório privado: abre o modal "Ver Arquitetura & Detalhes" */
+export interface PrivateProject extends ProjectBase {
+  isPrivate: true;
+  privacyNote: string;
+  modalBadge?: string;
+  screenshots?: Screenshot[];
+}
+
+/** Projeto público: mostra os botões "Acessar" e/ou "Código" */
+export interface PublicProject extends ProjectBase {
+  isPrivate: false;
+  liveDemo?: string;
+  github?: string;
+}
+
+export type Project = PrivateProject | PublicProject;
+
+export const projectsData: Project[] = [
   {
     id: "dash-financeiro",
     title: "Prisma Finance - Gestão Financeira Segura",
