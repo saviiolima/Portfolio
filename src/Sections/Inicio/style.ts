@@ -193,6 +193,29 @@ export const TerminalWindow = styled.div`
   }
 `;
 
+export const IconLink = styled.a`
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    color: var(--primary);
+    border-color: rgba(219, 185, 134, 0.35);
+    transform: translateY(-2px);
+  }
+`;
+
 export const PrimaryLink = styled(Link)`
   display: inline-flex;
   align-items: center;

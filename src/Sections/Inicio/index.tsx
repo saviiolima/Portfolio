@@ -5,7 +5,10 @@ import {
   FaEnvelope,
   FaArrowRight,
   FaChevronDown,
+  FaLinkedin,
+  FaGithub,
 } from "react-icons/fa";
+import { CONTACT } from "../../data/contact";
 
 type LineType = "keyword" | "statement" | "item" | "empty" | "func" | "return";
 
@@ -141,6 +144,24 @@ export default function Inicio() {
           <S.SecondaryLink to={{ pathname: "/", hash: "#contato" }}>
             <FaEnvelope size={16} /> Contato
           </S.SecondaryLink>
+          <S.IconLink
+            href={CONTACT.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn (abre em nova aba)"
+            title="LinkedIn"
+          >
+            <FaLinkedin size={19} />
+          </S.IconLink>
+          <S.IconLink
+            href={CONTACT.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub (abre em nova aba)"
+            title="GitHub"
+          >
+            <FaGithub size={19} />
+          </S.IconLink>
         </S.Actions>
       </S.InfoBox>
 
