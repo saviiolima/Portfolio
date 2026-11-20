@@ -17,8 +17,8 @@ export default function Logo({
   return (
     <svg
       width={size}
-      height={(size * 190) / 180}
-      viewBox="0 0 180 190"
+      height={(size * 186) / 180}
+      viewBox="0 0 180 186"
       fill="none"
       stroke="currentColor"
       strokeLinecap="round"
@@ -27,11 +27,11 @@ export default function Logo({
       focusable="false"
       {...rest}
     >
-      <path d="M40 12V112" strokeWidth="15" />
-      <path d="M64 14L136 62L64 110" strokeWidth="14" />
-      <path d="M24 136H148" strokeWidth="13" />
-      <path d="M44 155H165" strokeWidth="13" stroke={accent} />
-      <path d="M14 174H124" strokeWidth="13" stroke={accent} />
+      <path d="M43.5 12.5V116.5" strokeWidth="13" />
+      <path d="M70 22L140 66L70 110" strokeWidth="18" />
+      <path d="M21.5 136H154.5" strokeWidth="13" />
+      <path d="M40.5 155H167.5" strokeWidth="13" stroke={accent} />
+      <path d="M12.5 174H132.5" strokeWidth="13" stroke={accent} />
     </svg>
   );
 }
