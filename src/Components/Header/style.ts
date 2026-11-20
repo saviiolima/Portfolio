@@ -44,8 +44,9 @@ export const LogoLink = styled(Link)`
     margin-top: 3px;
   }
 
-  @media (max-width: 420px) {
-    small {
+  /* Em telas estreitas o nome encostava no menu: fica só o símbolo */
+  @media (max-width: 480px) {
+    .wordmark {
       display: none;
     }
   }

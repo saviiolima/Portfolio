@@ -16,7 +16,8 @@ Site pessoal com apresentação, trajetória e projetos. Publicado em <https://s
 src/
   Components/   Header, Footer, Logo, LoadingScreen, Skills
   Pages/        Inicio, Sobre, Projetos, NaoEncontrada (404)
-  data/         projects.ts (lista de projetos e tipos, exibida em /Projetos)
+  data/         projects.ts (projetos e tipos, exibidos em /Projetos e na Início)
+                contact.ts (e-mail, LinkedIn e GitHub usados nos botões e no rodapé)
   Routes/       rotas e tela de boot
   Styles/       estilos globais
 marca/          símbolo em SVG (fundo claro e escuro) e ícone de app

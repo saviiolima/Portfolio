@@ -102,7 +102,7 @@ export const projectsData: Project[] = [
   },
   {
     id: "evolutiva-app",
-    title: "Evolutiva App - Gestão & Avaliação",
+    title: "Sonda+ - Gestão & Avaliação",
     category: "Aplicações & Portais",
     description:
       "Plataforma completa para acompanhamento e sondagem pedagógica com importação de planilhas, relatórios consolidados e autenticação com Supabase.",
