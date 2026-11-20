@@ -44,7 +44,7 @@ export const HomeLink = styled(Link)`
   padding: 12px 24px;
   border-radius: 8px;
   background: var(--primary);
-  color: #06141B;
+  color: #06141b;
   font-weight: 700;
   transition:
     transform 0.2s ease,

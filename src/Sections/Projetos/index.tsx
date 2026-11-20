@@ -25,7 +25,8 @@ const CATEGORIES: Filter[] = [
 export default function Projetos() {
   const [selectedFilter, setSelectedFilter] = useState<Filter>("Todos");
   const [showAll, setShowAll] = useState(false);
-  const [activeModalProject, setActiveModalProject] = useState<PrivateProject | null>(null);
+  const [activeModalProject, setActiveModalProject] =
+    useState<PrivateProject | null>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const lastTriggerRef = useRef<HTMLElement | null>(null);
@@ -92,10 +93,10 @@ export default function Projetos() {
   const hiddenCount = filteredProjects.length - visibleProjects.length;
 
   return (
-    <S.Container>
+    <S.Container id="projetos" aria-labelledby="projetos-titulo">
       <S.HeaderSection>
         <span className="tag">Portfólio de Projetos</span>
-        <h1>Soluções & Aplicações</h1>
+        <h2 id="projetos-titulo">Soluções & Aplicações</h2>
         <p>
           Sistemas web completos, arquitetura de permissões (RBAC) e dashboards
           analíticos de alto impacto.
@@ -212,7 +213,8 @@ export default function Projetos() {
             </button>
             <div className="modal-badge">
               <FaLock size={10} />{" "}
-              {activeModalProject.modalBadge || "Aplicação em Uso Institucional"}
+              {activeModalProject.modalBadge ||
+                "Aplicação em Uso Institucional"}
             </div>
             <h2 id="modal-title">{activeModalProject.title}</h2>
             <p>{activeModalProject.description}</p>

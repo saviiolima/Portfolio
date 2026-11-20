@@ -1,13 +1,17 @@
 import { useState, useEffect, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import LoadingScreen from "../Components/LoadingScreen";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import Home from "../Pages/Home";
 
-// Carregamento sob demanda das páginas para deixar o pacote inicial super leve
-const Inicio = lazy(() => import("../Pages/Inicio"));
-const Sobre = lazy(() => import("../Pages/Sobre"));
-const Projetos = lazy(() => import("../Pages/Projetos"));
+// A página de erro raramente é aberta: carrega só quando necessário
 const NaoEncontrada = lazy(() => import("../Pages/NaoEncontrada"));
 
 const BOOT_KEY = "boot-seen";
@@ -27,15 +31,6 @@ const hasSeenBoot = () => {
   }
 };
 
-// Volta ao topo ao trocar de página
-function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-}
-
 const markBootSeen = () => {
   try {
     sessionStorage.setItem(BOOT_KEY, "1");
@@ -43,6 +38,27 @@ const markBootSeen = () => {
     // armazenamento indisponível: apenas mostra o boot de novo na próxima visita
   }
 };
+
+// Rola até a seção do endereço (#sobre, #projetos...) ou volta ao topo
+function ScrollManager() {
+  const { pathname, hash, key } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (target) {
+        target.scrollIntoView({
+          behavior: prefersReducedMotion() ? "auto" : "smooth",
+          block: "start",
+        });
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash, key]);
+
+  return null;
+}
 
 export default function Rotas() {
   const [isLoading, setIsLoading] = useState(() => !hasSeenBoot());
@@ -60,14 +76,25 @@ export default function Rotas() {
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollManager />
       <Header />
 
       <Suspense fallback={<div style={{ minHeight: "80vh" }} />}>
         <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/Sobre" element={<Sobre />} />
-          <Route path="/Projetos" element={<Projetos />} />
+          <Route path="/" element={<Home />} />
+          {/* Endereços antigos continuam funcionando */}
+          <Route
+            path="/sobre"
+            element={
+              <Navigate to={{ pathname: "/", hash: "#sobre" }} replace />
+            }
+          />
+          <Route
+            path="/projetos"
+            element={
+              <Navigate to={{ pathname: "/", hash: "#projetos" }} replace />
+            }
+          />
           <Route path="*" element={<NaoEncontrada />} />
         </Routes>
       </Suspense>
