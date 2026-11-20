@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import * as S from "./style";
 import {
-  FaLinkedin,
-  FaGithub,
   FaTerminal,
   FaEnvelope,
   FaArrowRight,
   FaChevronDown,
 } from "react-icons/fa";
-import { CONTACT } from "../../data/contact";
 
 type LineType = "keyword" | "statement" | "item" | "empty" | "func" | "return";
 
@@ -141,23 +138,9 @@ export default function Inicio() {
           <S.PrimaryLink to={{ pathname: "/", hash: "#projetos" }}>
             Ver projetos <FaArrowRight size={13} />
           </S.PrimaryLink>
-          <S.SecondaryBtn
-            href={CONTACT.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin size={18} /> LinkedIn
-          </S.SecondaryBtn>
-          <S.SecondaryBtn
-            href={CONTACT.github}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub size={18} /> GitHub
-          </S.SecondaryBtn>
-          <S.SecondaryBtn href={`mailto:${CONTACT.email}`}>
-            <FaEnvelope size={17} /> E-mail
-          </S.SecondaryBtn>
+          <S.SecondaryLink to={{ pathname: "/", hash: "#contato" }}>
+            <FaEnvelope size={16} /> Contato
+          </S.SecondaryLink>
         </S.Actions>
       </S.InfoBox>
 
