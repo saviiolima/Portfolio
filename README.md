@@ -19,7 +19,7 @@ src/
   Pages/        Home (junta as seções) e NaoEncontrada (404)
   hooks/        useActiveSection (marca no menu a seção que está na tela)
   data/         projects.ts (projetos e tipos, exibidos na seção Projetos)
-                contact.ts (e-mail, LinkedIn e GitHub usados nos botões e no rodapé)
+                contact.ts (e-mail, LinkedIn e GitHub usados no hero e na seção Contato)
   Routes/       rotas, rolagem até a âncora e tela de boot
   Styles/       estilos globais
 marca/          símbolo em SVG (fundo claro e escuro) e ícone de app
