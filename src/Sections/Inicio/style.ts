@@ -79,7 +79,7 @@ export const Actions = styled.div`
   }
 `;
 
-export const SecondaryBtn = styled.a`
+export const SecondaryLink = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -244,5 +244,10 @@ export const ScrollHint = styled(Link)`
   &:hover {
     color: var(--primary);
     border-color: var(--primary);
+  }
+
+  /* Com o conteúdo empilhado a página já convida a rolar */
+  @media (max-width: 960px) {
+    display: none;
   }
 `;
