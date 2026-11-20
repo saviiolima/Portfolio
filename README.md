@@ -1,12 +1,12 @@
 # Portfólio — Sávio Lima
 
-Site pessoal com apresentação, trajetória e projetos. Publicado em <https://saviolima.vercel.app>.
+Site pessoal de página única: apresentação, sobre, projetos e contato em uma rolagem só. Publicado em <https://saviolima.vercel.app>.
 
 ## Stack
 
 - React 19 + Vite 8 + TypeScript (modo estrito)
-- React Router (rotas carregadas sob demanda)
-- styled-components (paleta e tokens em `src/Styles/globalstyle.js`)
+- React Router (menu por âncoras, redirecionamentos e página 404)
+- styled-components (paleta e tokens em `src/Styles/globalstyle.ts`)
 - react-icons
 - Vercel (hospedagem e Web Analytics)
 
@@ -15,10 +15,12 @@ Site pessoal com apresentação, trajetória e projetos. Publicado em <https://s
 ```
 src/
   Components/   Header, Footer, Logo, LoadingScreen, Skills
-  Pages/        Inicio, Sobre, Projetos, NaoEncontrada (404)
-  data/         projects.ts (projetos e tipos, exibidos em /Projetos e na Início)
+  Sections/     Inicio, Sobre, Projetos, Contato (seções da página única, na ordem em que aparecem)
+  Pages/        Home (junta as seções) e NaoEncontrada (404)
+  hooks/        useActiveSection (marca no menu a seção que está na tela)
+  data/         projects.ts (projetos e tipos, exibidos na seção Projetos)
                 contact.ts (e-mail, LinkedIn e GitHub usados nos botões e no rodapé)
-  Routes/       rotas e tela de boot
+  Routes/       rotas, rolagem até a âncora e tela de boot
   Styles/       estilos globais
 marca/          símbolo em SVG (fundo claro e escuro) e ícone de app
 public/         favicons (svg, png, ico), apple-touch-icon e imagem de pré-visualização (og-image.png)
@@ -42,5 +44,9 @@ Edite `src/data/projects.ts`. O tipo `Project` aponta campos errados ou faltando
 - `liveDemo`: mostra o botão "Acessar".
 - `github`: mostra o botão "Código".
 - `isPrivate: true`: troca os botões por "Ver Arquitetura & Detalhes" (modal com `highlights`), usando `privacyNote` no selo do card e `modalBadge` no modal.
+
+## Navegação
+
+Cada seção tem um `id` (`inicio`, `sobre`, `projetos`, `contato`) e o menu leva para `/#id`. Os endereços antigos `/Sobre` e `/Projetos` redirecionam para a seção correspondente.
 
 O `vercel.json` redireciona todas as rotas para `index.html`, necessário para o roteamento no cliente.

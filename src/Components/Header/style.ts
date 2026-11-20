@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -60,9 +60,16 @@ export const Nav = styled.nav`
   @media (max-width: 650px) {
     gap: 18px;
   }
+
+  /* O logo já leva ao topo; sem "Início" os links cabem em 320 px */
+  @media (max-width: 480px) {
+    a[data-section="inicio"] {
+      display: none;
+    }
+  }
 `;
 
-export const NavItem = styled(NavLink)`
+export const NavItem = styled(Link)`
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--text-muted);

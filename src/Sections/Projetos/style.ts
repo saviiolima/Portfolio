@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
-  min-height: calc(100vh - 150px);
-  padding: 50px 8%;
+export const Container = styled.section`
+  padding: 96px 8%;
+  scroll-margin-top: 80px;
 `;
 
 export const HeaderSection = styled.div`
@@ -22,7 +22,7 @@ export const HeaderSection = styled.div`
     margin-bottom: 14px;
   }
 
-  h1 {
+  h2 {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -104,9 +104,7 @@ export const ProjectCard = styled.div<{ $featured: boolean }>`
     width: 100%;
     height: 3px;
     background: ${(props) =>
-      props.$featured
-        ? "var(--primary)"
-        : "transparent"};
+      props.$featured ? "var(--primary)" : "transparent"};
     opacity: 0.8;
   }
 
@@ -149,7 +147,7 @@ export const CardHeader = styled.div`
     padding: 3px 8px;
     border-radius: 50px;
     background: rgba(155, 168, 171, 0.1);
-    color: #9BA8AB;
+    color: #9ba8ab;
     border: 1px solid rgba(155, 168, 171, 0.25);
   }
 
@@ -179,7 +177,7 @@ export const TagList = styled.div`
 export const Tag = styled.span`
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #CCD0CF;
+  color: #ccd0cf;
   font-size: 0.78rem;
   font-weight: 500;
   padding: 4px 10px;
@@ -213,7 +211,7 @@ export const CardActions = styled.div`
 
     &:hover {
       background: var(--primary);
-      color: #06141B;
+      color: #06141b;
     }
   }
 
@@ -256,7 +254,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div<{ $wide: boolean }>`
-  background: #0B1A24;
+  background: #0b1a24;
   border: 1px solid rgba(219, 185, 134, 0.25);
   border-radius: 20px;
   max-width: ${(props) => (props.$wide ? "820px" : "620px")};
@@ -294,7 +292,7 @@ export const ModalContent = styled.div<{ $wide: boolean }>`
     align-items: center;
     gap: 6px;
     background: rgba(155, 168, 171, 0.12);
-    color: #9BA8AB;
+    color: #9ba8ab;
     border: 1px solid rgba(155, 168, 171, 0.3);
     padding: 4px 10px;
     border-radius: 50px;
@@ -336,7 +334,7 @@ export const ModalContent = styled.div<{ $wide: boolean }>`
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      color: #CCD0CF;
+      color: #ccd0cf;
       font-size: 0.9rem;
       line-height: 1.5;
 

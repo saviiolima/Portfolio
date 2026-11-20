@@ -57,7 +57,7 @@ export default function Skills() {
       <S.Body>
         {SKILL_GROUPS.map((group) => (
           <S.Group key={group.title}>
-            <h3>{group.title}</h3>
+            <h4>{group.title}</h4>
             <ul>
               {group.items.map((item) => (
                 <li key={item}>{item}</li>

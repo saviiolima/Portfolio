@@ -59,7 +59,7 @@ export const Body = styled.div`
 `;
 
 export const Group = styled.section`
-  h3 {
+  h4 {
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;

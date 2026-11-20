@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
-  min-height: calc(100vh - 150px);
-  padding: 50px 8%;
+export const Container = styled.section`
+  padding: 96px 8%;
+  scroll-margin-top: 80px;
+  background: rgba(17, 33, 45, 0.35);
+  border-top: 1px solid var(--border-card);
+  border-bottom: 1px solid var(--border-card);
 `;
 
 export const HeaderSection = styled.div`
@@ -22,7 +25,7 @@ export const HeaderSection = styled.div`
     margin-bottom: 14px;
   }
 
-  h1 {
+  h2 {
     font-size: 2.6rem;
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -104,7 +107,7 @@ export const BenchmarkSection = styled.section`
     color: var(--primary-light);
     margin-bottom: 10px;
 
-    h2 {
+    h3 {
       font-size: 1.8rem;
       font-weight: 700;
       color: var(--text-main);

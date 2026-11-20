@@ -10,10 +10,10 @@ import {
 
 export default function Sobre() {
   return (
-    <S.Container>
+    <S.Container id="sobre" aria-labelledby="sobre-titulo">
       <S.HeaderSection>
         <span className="tag">Sobre Mim</span>
-        <h1>Conheça um pouco da minha trajetória</h1>
+        <h2 id="sobre-titulo">Conheça um pouco da minha trajetória</h2>
         <p>
           Formação interdisciplinar unindo ciências e tecnologia, com foco em
           desenvolvimento de software, engenharia de dados e soluções
@@ -74,11 +74,11 @@ export default function Sobre() {
       <S.BenchmarkSection>
         <div className="section-title">
           <FaCode size={18} />
-          <h2>Stack & Tecnologias</h2>
+          <h3>Stack & Tecnologias</h3>
         </div>
         <p className="section-desc">
-          Tecnologias que uso nos projetos publicados, de interfaces e dados
-          a controle de acesso e testes.
+          Tecnologias que uso nos projetos publicados, de interfaces e dados a
+          controle de acesso e testes.
         </p>
 
         <Skills />
