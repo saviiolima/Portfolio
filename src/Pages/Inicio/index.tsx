@@ -2,7 +2,20 @@ import { useState, useEffect } from "react";
 import * as S from "./style";
 import { FaLinkedin, FaGithub, FaTerminal } from "react-icons/fa";
 
-const CODE_LINES = [
+type LineType =
+  | "keyword"
+  | "statement"
+  | "item"
+  | "empty"
+  | "func"
+  | "return";
+
+interface CodeLine {
+  text: string;
+  type: LineType;
+}
+
+const CODE_LINES: CodeLine[] = [
   { text: "class DeveloperProfile:", type: "keyword" },
   { text: '  name = "Sávio Lima"', type: "statement" },
   {
@@ -36,7 +49,7 @@ export default function Inicio() {
     // Sem animação: o código fica completo e parado
     if (reducedMotion) return undefined;
 
-    let timer;
+    let timer: ReturnType<typeof setTimeout>;
 
     if (visibleCount < CODE_LINES.length) {
       // Tempo entre cada linha descendo em cascata
@@ -53,7 +66,7 @@ export default function Inicio() {
     return () => clearTimeout(timer);
   }, [visibleCount]);
 
-  const renderFormattedLine = (line) => {
+  const renderFormattedLine = (line: CodeLine) => {
     if (!line.text) return "\u00A0";
 
     if (line.type === "keyword") {

@@ -1,7 +1,19 @@
 // Símbolo da marca: barra vertical + chevron + três linhas.
 // A cor principal vem de currentColor; as duas linhas de baixo usam a areia.
-// eslint-disable-next-line react/prop-types
-export default function Logo({ size = 32, accent = "var(--areia)", ...rest }) {
+import type { SVGProps } from "react";
+
+interface LogoProps extends Omit<SVGProps<SVGSVGElement>, "width" | "height"> {
+  /** Largura em pixels; a altura acompanha a proporção do símbolo */
+  size?: number;
+  /** Cor das duas linhas de baixo */
+  accent?: string;
+}
+
+export default function Logo({
+  size = 32,
+  accent = "var(--areia)",
+  ...rest
+}: LogoProps) {
   return (
     <svg
       width={size}

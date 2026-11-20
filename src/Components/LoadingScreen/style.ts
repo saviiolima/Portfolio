@@ -59,7 +59,7 @@ export const ProgressBarTrack = styled.div`
   margin-bottom: 12px;
 `;
 
-export const ProgressBarFill = styled.div`
+export const ProgressBarFill = styled.div<{ $width: number }>`
   width: ${(props) => props.$width}%;
   height: 100%;
   background: var(--areia);
