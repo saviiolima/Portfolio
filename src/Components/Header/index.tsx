@@ -8,7 +8,7 @@ export default function Header() {
         <Logo size={34} />
         <span className="wordmark">
           <strong>Sávio Lima</strong>
-          <small>Software</small>
+          <small>Dev</small>
         </span>
       </S.LogoLink>
       <S.Nav aria-label="Principal">
